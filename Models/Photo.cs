@@ -4,6 +4,7 @@ namespace PhotoApi.Models
     {
         public int Id { get; set; }
         public string Name { get; set; } = "";
+        public string Url { get; set; } = "";
         public int Width { get; set; }
         public int Height { get; set; }
         public DateTime CreatedAt { get; set; } // Set automatically in ApplicationDbContext

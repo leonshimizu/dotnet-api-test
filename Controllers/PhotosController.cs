@@ -29,6 +29,7 @@ namespace PhotoApi.Controllers
             var photo = new Photo
             {
                 Name = request.Name,
+                Url = request.Url,
                 Width = request.Width,
                 Height = request.Height
             };
@@ -67,6 +68,7 @@ namespace PhotoApi.Controllers
 
             // We use PUT here to replace the full resource; switch to PATCH if you teach JSON-Patch later
             photo.Name = request.Name ?? photo.Name;
+            photo.Url = request.Url ?? photo.Url;
             photo.Width = request.Width ?? photo.Width;
             photo.Height = request.Height ?? photo.Height;
 
@@ -95,6 +97,7 @@ namespace PhotoApi.Controllers
         public class CreatePhotoRequest
         {
             public string Name { get; set; } = "";
+            public string Url { get; set; } = "";
             public int Width { get; set; }
             public int Height { get; set; }
             // Note: CreatedAt/UpdatedAt are set automatically, so don't include them in request bodies
@@ -104,6 +107,7 @@ namespace PhotoApi.Controllers
         public class UpdatePhotoRequest
         {
             public string Name { get; set; } = "";
+            public string Url { get; set; } = "";
             public int? Width { get; set; }
             public int? Height { get; set; }
         }
